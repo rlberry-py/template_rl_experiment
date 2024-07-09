@@ -1,6 +1,7 @@
-from rlberry.manager import plot_writer_data
+from rlberry.manager import plot_writer_data, evaluate_agents
 import pathlib
 from rlberry.manager.experiment_manager import ExperimentManager
+import matplotlib.pyplot as plt
 
 default_ppo = "data_training_default_ppo"
 path_to_load = next(
@@ -38,4 +39,9 @@ _ = plot_writer_data([loaded_experiment_manager_default_ppo, loaded_experiment_m
     show=False,
     savefig_fname="value_loss"
 )
+
+_ = evaluate_agents(
+    [loaded_experiment_manager_default_ppo, loaded_experiment_manager_avec_ppo], n_simulations=50, show=False,
+)  # Evaluate the trained agent on
+plt.savefig("evaluations")
 
