@@ -1,6 +1,6 @@
 import os
 
-def dump_metadata(folder, pipenv = True, pip_freeze = False):
+def dump_metadata(folder, pipenv = False, pip_freeze = True):
     """
     Dump the metadata necessary to recreate a python environment.
 
@@ -13,7 +13,9 @@ def dump_metadata(folder, pipenv = True, pip_freeze = False):
         Folder in which to dump metadata.
 
     pipenv: boolean, default = True
-        Use pipenv to generate Pipfile and Pipfile.lock. Recommended method but may be long.
+        Use pipenv to generate Pipfile and Pipfile.lock.
+        May be long, but is more precise than pip freeze.
+        You need to install pipenv for this to work.
 
     pip_freeze: boolean, default = False
         Use pip freeze to generate a requirement.txt
