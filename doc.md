@@ -1,19 +1,23 @@
 # Introduction
 ## Installation
 
-To reproduce this experiment, we advise you use [pipenv](https://pipenv.pypa.io/) to create a virtual environment or just pip and virtualenv with the supplied versionning files in order to have the same version of python libraries as when the experiment was run by the authors.
+To reproduce this experiment, you can either use pip and virtualenv or you can use [pipenv](https://pipenv.pypa.io/) to create a virtual environment with the supplied versionning files in order to have the same version of python libraries as when the experiment was run by the authors. Remark that pipenv can be long to run but is more precise in its versionning of python libraries.
+
+**With virtualenv and pip**
+```bash
+python -m venv rlberry_xp_venv
+source rlberry_xp_venv/bin/activate
+cd empirical_rl/metadata
+pip install -r requirements.txt
+```
 
 **With pipenv**
 ```bash
 cd empirical_rl/metadata
 pipenv install
+pipenv shell
 ```
 
-**With virtualenv and pip**
-```bash
-cd empirical_rl/metadata
-pip install -r requirements.txt
-```
 
 ## Skeleton of the experiment
 

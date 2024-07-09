@@ -5,6 +5,9 @@ from rlberry.seeding import Seeder
 
 from stable_baselines3 import PPO
 from avec_ppo import AVECPPO
+from reproducibility_utils import dump_metadata
+
+dump_metadata("metadata/", pipenv=False, pip_freeze=True)
 
 seeder = Seeder(42)
 
